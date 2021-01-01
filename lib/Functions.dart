@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-Color bg_App = Colors.lightBlue[100];
+Color bg_App = Color(0xFF0E4382);
 
 Widget drawerApp(BuildContext context) {
   return Drawer(
@@ -200,5 +200,26 @@ Widget appBarBuscador(BuildContext context) {
           onPressed: () {})
       //onPressed: () => marketPress(context))
     ],
+  );
+}
+
+Widget textFormF(String lab, String hint, TextInputType tit) {
+  return TextFormField(
+    keyboardType: tit,
+    decoration: InputDecoration(
+      labelText: lab,
+      hintText: hint,
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+    ),
+  );
+}
+
+Widget textFormPass(String lab, String hint) {
+  return TextFormField(
+    decoration: InputDecoration(
+      labelText: lab,
+      hintText: hint,
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+    ),
   );
 }

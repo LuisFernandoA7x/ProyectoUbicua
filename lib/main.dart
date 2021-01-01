@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_ubicua/home_page.dart';
+import 'package:proyecto_ubicua/screen/initial_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,10 +10,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Catalogo',
-      theme: ThemeData.light(),
-      color: Colors.black,
-      home: HomePage(),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xFF0E4382),
+        appBarTheme: AppBarTheme(
+          color: Color(0xFF0E4382),
+          elevation: 0,
+        ),
+      ),
+      color: Colors.blue[100],
+      home: InitialPage(),
     );
   }
 }
