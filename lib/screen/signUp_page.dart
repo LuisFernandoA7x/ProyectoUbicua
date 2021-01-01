@@ -31,6 +31,9 @@ class SignUpPage extends StatelessWidget {
                     height: MediaQuery.of(context).size.height - 370,
                     child: Column(
                       children: [
+                        SizedBox(
+                          height: 5,
+                        ), //COMMIT 01/01/21
                         Text("Crea una cuenta",
                             style: TextStyle(
                                 color: Colors.blue[900], fontSize: 30)),
