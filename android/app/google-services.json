@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "372768075971",
+    "firebase_url": "https://ubicua-3a984.firebaseio.com",
+    "project_id": "ubicua-3a984",
+    "storage_bucket": "ubicua-3a984.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372768075971:android:af3b61f8389ce519e97276",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_ubicua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372768075971-ecd0cnal5cuf1op8sev91jriu99pghiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAleBw64dUwFpZsz1rLMmI5yuRKf7S2X6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372768075971-ecd0cnal5cuf1op8sev91jriu99pghiv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
