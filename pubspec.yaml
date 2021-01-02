@@ -33,9 +33,7 @@ dependencies:
   # Add the dependencies for the Firebase products you want to use in your app
   # For example, to use Firebase Authentication and Cloud Firestore
   firebase_auth: ^0.18.4+1
-
-
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

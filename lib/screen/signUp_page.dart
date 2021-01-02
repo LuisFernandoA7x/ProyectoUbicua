@@ -1,10 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/Functions.dart';
 
-String mensaje = "A";
+String mensaje = "";
+void _registrarte(FirebaseAuth) {}
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key key}) : super(key: key);
