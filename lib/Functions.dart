@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 Color bg_App = Color(0xFF0E4382);
+TextEditingController emailController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
 
 Widget drawerApp(BuildContext context) {
   return Drawer(
@@ -205,17 +207,33 @@ Widget appBarBuscador(BuildContext context) {
 
 Widget textFormF(String lab, String hint, TextInputType tit) {
   return TextFormField(
+    controller: emailController,
     keyboardType: tit,
     decoration: InputDecoration(
       labelText: lab,
       hintText: hint,
       floatingLabelBehavior: FloatingLabelBehavior.always,
     ),
+    validator: (String value) {
+      if (value.isEmpty) {
+        return "Por favor ingresa tu correo";
+      } else {
+        return value;
+      }
+    },
   );
 }
 
 Widget textFormPass(String lab, String hint) {
   return TextFormField(
+    controller: passwordController,
+    validator: (String value) {
+      if (value.isEmpty) {
+        return "Por favor ingresa tu Contraseña";
+      } else {
+        return value;
+      }
+    },
     decoration: InputDecoration(
       labelText: lab,
       hintText: hint,
