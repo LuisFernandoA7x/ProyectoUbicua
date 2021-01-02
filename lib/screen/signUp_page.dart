@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/Functions.dart';
 
+void _registrarte(){
+
+}
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key key}) : super(key: key);
 
