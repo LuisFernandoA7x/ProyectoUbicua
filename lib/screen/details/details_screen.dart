@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/models/Product.dart';
-import 'package:shop_app/screens/details/components/body.dart';
+import 'package:proyecto_ubicua/screen/details/components/body.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Product product;

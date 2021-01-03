@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:proyecto_ubicua/constants.dart';
-import 'package:proyecto_ubicua/lib/components/body.dart';
+import 'package:proyecto_ubicua/screen/home/components/body.dart';
 
-class primeraPantalla extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
