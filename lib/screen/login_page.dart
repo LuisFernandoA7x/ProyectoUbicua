@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
             Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 110),
+                  margin: EdgeInsets.only(top: 95),
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height - 200,
                   decoration: BoxDecoration(
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 15),
                       SizedBox(
                         height: 60,
                         width: MediaQuery.of(context).size.width - 100,
@@ -95,7 +95,6 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         height: 20,
                       ),
-                      Text(mensaje),
                       Text("¿No tienes una cuenta?"),
                       ElevatedButton(
                         onPressed: () => signUpPress(context),
