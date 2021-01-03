@@ -31,10 +31,14 @@ dependencies:
   flutter_svg: ^0.17.4
   firebase_database: ^4.4.0
   firebase_core: ^0.5.3
+<<<<<<< HEAD
 
   # Add the dependencies for the Firebase products you want to use in your app
   # For example, to use Firebase Authentication and Cloud Firestore
+=======
+>>>>>>> d53ee05ea104977df0930377082fe487568766b5
   firebase_auth: ^0.18.4+1
+  cloud_firestore: ^0.14.4
   
 dev_dependencies:
   flutter_test:

@@ -1,10 +1,13 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:proyecto_ubicua/screen/login_page.dart';
 
 Color bg_App = Color(0xFF0E4382);
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
+UserCredential user;
 
 Widget drawerApp(BuildContext context) {
   return Drawer(
@@ -23,14 +26,14 @@ Widget drawerApp(BuildContext context) {
                     children: [
                       Container(
                         width: 180,
-                        child: Text("Hola USUARIO"),
+                        child: Text(userCredential.user.email),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       Container(
                         child: Text(
-                          "Nivel 1 - Mercado Puntos    >",
+                          "Bienvenido",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -73,16 +76,6 @@ Widget drawerApp(BuildContext context) {
           //     firstPagePress(context), //para ir a la primera pagina
         ),
         ListTile(
-          title: Text('Mis Compras'),
-          leading: Icon(Icons.shopping_bag_outlined),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
-        ),
-        ListTile(
           title: Text('Mi cuenta'),
           leading: Icon(Icons.account_circle_outlined),
           onTap: () {
@@ -93,52 +86,8 @@ Widget drawerApp(BuildContext context) {
           },
         ),
         ListTile(
-          title: Text('Vender'),
-          leading: Icon(Icons.shopping_bag),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
-        ),
-        ListTile(
-          title: Text('Historial'),
-          leading: Icon(Icons.access_time),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
-        ),
-        Divider(
-          color: Colors.grey,
-          indent: 20,
-        ),
-        ListTile(
           title: Text('Categorias'),
           leading: Icon(Icons.view_list_rounded),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
-        ),
-        ListTile(
-          title: Text('Supermercado'),
-          leading: Icon(Icons.shopping_cart_sharp),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
-        ),
-        ListTile(
-          title: Text('Tiendas oficiales'),
-          leading: Icon(Icons.storefront),
           onTap: () {
             // Update the state of the app
             // ...
@@ -165,7 +114,7 @@ Widget drawerApp(BuildContext context) {
           indent: 20,
         ),
         ListTile(
-          title: Text('Acerca de Mercado Libre'),
+          title: Text('Acerca de Uniformes VELVEL'),
           onTap: () {
             // Update the state of the app
             // ...
@@ -180,7 +129,7 @@ Widget drawerApp(BuildContext context) {
 
 Widget appBarBuscador(BuildContext context) {
   return AppBar(
-    iconTheme: IconThemeData(color: Colors.black),
+    iconTheme: IconThemeData(color: Colors.white),
     elevation: 0,
     //backgroundColor: colorBar,
     title: ClipRRect(
@@ -196,12 +145,7 @@ Widget appBarBuscador(BuildContext context) {
         ),
       ),
     ),
-    actions: [
-      IconButton(
-          icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
-          onPressed: () {})
-      //onPressed: () => marketPress(context))
-    ],
+    actions: [],
   );
 }
 
