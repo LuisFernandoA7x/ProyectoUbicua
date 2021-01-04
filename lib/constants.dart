@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 
-const kTextColor = Color(0xFF535353);
-const kTextLightColor = Color(0xFFACACAC);
-
-const kDefaultPaddin = 20.0;
-
-const bgBlueGradient = LinearGradient(
+LinearGradient bgBlueGradient = LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
   colors: [Color(0xFF0E4382), Color(0xFF0784BA), Color(0xFF00639B)],
-  //colors: [Color(0xFF0784BA), Color(0xFFFFFFF), Color(0xFF0784BA)],
 );
 
-const bgBlueGradientLOGIN =
+LinearGradient bgBlueGradientLOGIN =
     LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter,
         //colors: [Color(0xFF0784BA), Color(0xFFFFFFF)],
         colors: [
@@ -35,3 +29,7 @@ const borderRadCardLogin = BoxDecoration(
 );
 
 const bgText = Color(0xFFE9E9E9);
+const kTextColor = Color(0xFF535353);
+const kTextLightColor = Color(0xFFACACAC);
+
+const kDefaultPaddin = 20.0;

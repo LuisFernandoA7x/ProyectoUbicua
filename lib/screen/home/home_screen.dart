@@ -17,13 +17,13 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
+        icon: SvgPicture.asset("images/icons/back.svg"),
         onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(
-            "assets/icons/search.svg",
+            "images/icons/search.svg",
             // By default our  icon color is white
             color: Colors.black,
           ),
@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         ),
         IconButton(
           icon: SvgPicture.asset(
-            "assets/icons/cart.svg",
+            "images/icons/cart.svg",
             // By default our  icon color is white
             color: Colors.black,
           ),

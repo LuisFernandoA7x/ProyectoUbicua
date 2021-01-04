@@ -41,21 +41,6 @@ Widget drawerApp(BuildContext context) {
                   )
                 ],
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(180)),
-                  color: Colors.blue.withOpacity(.9),
-                ),
-                child: FlatButton(
-                    minWidth: 300,
-                    onPressed: () {},
-                    //onPressed: () => firstPagePress(context),
-                    child: Text(
-                      "Primeras pantallas",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              )
             ],
           ),
         ),

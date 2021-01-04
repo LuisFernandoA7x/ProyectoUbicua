@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_ubicua/constants.dart';
-import 'package:proyecto_ubicua/models/Product.dart';
+import 'package:proyecto_ubicua/models/product.dart';
 import 'package:proyecto_ubicua/screen/details/details_screen.dart';
 
 import 'categorries.dart';
@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
           child: Text(
-            "Women",
+            "Uniformes",
             style: Theme.of(context)
                 .textTheme
                 .headline5
@@ -36,13 +36,15 @@ class Body extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) => ItemCard(
                       product: products[index],
-                      press: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailsScreen(
-                              product: products[index],
-                            ),
-                          )),
+                      // press: () => Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => DetailsScreen(
+                      //         product: products[index],
+                      //       ),
+                      //     )
+                      //     ),
+                      press: () {},
                     )),
           ),
         ),
