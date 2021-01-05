@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_ubicua/Functions.dart';
 import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/models/Product.dart';
 
@@ -11,7 +12,7 @@ import 'product_title_with_image.dart';
 class Body extends StatelessWidget {
   final Product product;
 
-  const Body({Key key, this.product}) : super(key: key);
+  const Body({this.product});
   @override
   Widget build(BuildContext context) {
     // It provide us total height and width
@@ -44,7 +45,6 @@ class Body extends StatelessWidget {
                       SizedBox(height: kDefaultPaddin / 2),
                       Description(product: product),
                       SizedBox(height: kDefaultPaddin / 2),
-                      CounterWithFavBtn(),
                       SizedBox(height: kDefaultPaddin / 2),
                       AddToCart(product: product)
                     ],

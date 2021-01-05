@@ -28,13 +28,13 @@ class AddToCart extends StatelessWidget {
                 color: product.color,
               ),
             ),
-            child: IconButton(
-              icon: SvgPicture.asset(
-                "assets/icons/add_to_cart.svg",
-                color: product.color,
-              ),
-              onPressed: () {},
-            ),
+            // child: IconButton(
+            //   icon: SvgPicture.asset(
+            //     "assets/icons/add_to_cart.svg",
+            //     color: product.color,
+            //   ),
+            //   onPressed: () {},
+            // ),
           ),
           Expanded(
             child: SizedBox(
@@ -45,7 +45,7 @@ class AddToCart extends StatelessWidget {
                 color: product.color,
                 onPressed: () {},
                 child: Text(
-                  "Buy  Now".toUpperCase(),
+                  "Agrega a favoritos".toUpperCase(),
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,

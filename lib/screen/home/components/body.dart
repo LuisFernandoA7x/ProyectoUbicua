@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/models/product.dart';
+import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/screen/details/details_screen.dart';
 import 'package:proyecto_ubicua/Functions.dart';
 
@@ -37,15 +37,12 @@ class Body extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) => ItemCard(
                       product: products[index],
-                      // press: () => Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => DetailsScreen(
-                      //         product: products[index],
-                      //       ),
-                      //     )
-                      //     ),
-                      press: () {},
+                      press: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailsScreen(index),
+                          )),
+                      //press: () {},
                     )),
           ),
         ),

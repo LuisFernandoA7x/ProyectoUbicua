@@ -22,13 +22,6 @@ class Product {
 
 List<Product> products = [
   Product(
-      // id: int.parse(GetInformation('Uniforme1', 'id').toString()),
-      // title: GetInformation('Uniforme1', 'title').toString(),
-      // price: int.parse(GetInformation('Uniforme1', 'price').toString()),
-      // size: int.parse(GetInformation('Uniforme1', 'size').toString()),
-      // description: GetInformation('Uniforme1', 'description').toString(),
-      // image: GetInformation('Uniforme1', 'image').toString(),
-
       id: 1,
       //id: GetInformation('Uniforme1', 'id'),
       //title: "uniforme",

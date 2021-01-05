@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:proyecto_ubicua/screen/login_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -197,6 +198,7 @@ class GetInformation extends StatelessWidget {
           Map<String, dynamic> data = snapshot.data.data();
 
           //return data[tipoDato];
+
           return Text("${data[tipoDato]}");
         }
         return Text("loading");
@@ -205,13 +207,34 @@ class GetInformation extends StatelessWidget {
   }
 }
 
-String dameInformacion(String documentId, String tipoDato) {
-  FirebaseFirestore.instance
-      .collection('UniformesEscolares')
-      .doc(documentId)
-      .get()
-      .then((DocumentSnapshot documentSnapshot) {
-    Map<String, dynamic> data = documentSnapshot.data();
-    return "${data[tipoDato]}";
-  });
+class GetInformation2 extends StatelessWidget {
+  final String documentId2;
+  final String tipoDato2;
+
+  GetInformation2(this.documentId2, this.tipoDato2);
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference db =
+        FirebaseFirestore.instance.collection('UniformesEscolares');
+
+    return FutureBuilder<DocumentSnapshot>(
+      future: db.doc(documentId2).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data = snapshot.data.data();
+
+          //return data[tipoDato];
+
+          return Text("${data[tipoDato2]}");
+        }
+        return Text("loading");
+      },
+    );
+  }
 }
