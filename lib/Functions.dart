@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:proyecto_ubicua/screen/login_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 Color bg_App = Color(0xFF0E4382);
 TextEditingController emailController = TextEditingController();
@@ -169,4 +172,46 @@ Widget textFormPass(String lab, String hint) {
       floatingLabelBehavior: FloatingLabelBehavior.always,
     ),
   );
+}
+
+class GetInformation extends StatelessWidget {
+  final String documentId;
+  final String tipoDato;
+
+  GetInformation(this.documentId, this.tipoDato);
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference db =
+        FirebaseFirestore.instance.collection('UniformesEscolares');
+
+    return FutureBuilder<DocumentSnapshot>(
+      future: db.doc(documentId).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data = snapshot.data.data();
+
+          //return data[tipoDato];
+          return Text("${data[tipoDato]}");
+        }
+        return Text("loading");
+      },
+    );
+  }
+}
+
+String dameInformacion(String documentId, String tipoDato) {
+  FirebaseFirestore.instance
+      .collection('UniformesEscolares')
+      .doc(documentId)
+      .get()
+      .then((DocumentSnapshot documentSnapshot) {
+    Map<String, dynamic> data = documentSnapshot.data();
+    return "${data[tipoDato]}";
+  });
 }

@@ -15,10 +15,11 @@ class Description extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
-      child: Text(
-        product.description,
-        style: TextStyle(height: 1.5),
-      ),
+      child: product.description,
+      // child: Text(
+      //   product.description,
+      //   style: TextStyle(height: 1.5),
+      // ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/models/product.dart';
 import 'package:proyecto_ubicua/screen/details/details_screen.dart';
+import 'package:proyecto_ubicua/Functions.dart';
 
 import 'categorries.dart';
 import 'item_card.dart';

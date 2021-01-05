@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_ubicua/Functions.dart';
 
 class Product {
-  final String image, title, description;
-  final int price, size, id;
+  final Widget title, description;
+  final String image;
+  final int id;
+  final Widget price, size;
   final Color color;
   Product({
     this.id,
@@ -15,54 +18,82 @@ class Product {
   });
 }
 
+//Widget title = GetInformation('Uniforme1', 'title');
+
 List<Product> products = [
   Product(
+      // id: int.parse(GetInformation('Uniforme1', 'id').toString()),
+      // title: GetInformation('Uniforme1', 'title').toString(),
+      // price: int.parse(GetInformation('Uniforme1', 'price').toString()),
+      // size: int.parse(GetInformation('Uniforme1', 'size').toString()),
+      // description: GetInformation('Uniforme1', 'description').toString(),
+      // image: GetInformation('Uniforme1', 'image').toString(),
+
       id: 1,
-      title: "Office Code",
-      price: 234,
-      size: 12,
-      description: dummyText,
-      image: "images/images/bag_1.png",
+      //id: GetInformation('Uniforme1', 'id'),
+      //title: "uniforme",
+      title: GetInformation('Uniforme1', 'title'),
+      price: GetInformation('Uniforme1', 'price'),
+      size: GetInformation('Uniforme1', 'size'),
+      description: GetInformation('Uniforme1', 'description'),
+      image: "images/images/uniforme_1.png",
+      //image: GetInformation('Uniforme1', 'image'),
       color: Color(0xFF3D82AE)),
   Product(
       id: 2,
-      title: "Belt Bag",
-      price: 234,
-      size: 8,
-      description: dummyText,
-      image: "images/images/bag_2.png",
+      //id: GetInformation('Uniforme1', 'id'),
+      //title: "Belt Bag",
+      // title: Text("Belt gag"),
+      title: GetInformation('Uniforme2', 'title'),
+      price: GetInformation('Uniforme2', 'price'),
+      size: GetInformation('Uniforme2', 'size'),
+      description: GetInformation('Uniforme2', 'description'),
+      image: "images/images/uniforme_2.png",
+      //image: GetInformation('Uniforme2', 'image'),
       color: Color(0xFFD3A984)),
   Product(
       id: 3,
-      title: "Hang Top",
-      price: 234,
-      size: 10,
-      description: dummyText,
-      image: "images/images/bag_3.png",
+      // id: GetInformation('Uniforme1', 'id'),
+      //title: Text("Belt gag"),
+      title: GetInformation('Uniforme3', 'title'),
+      price: GetInformation('Uniforme3', 'price'),
+      size: GetInformation('Uniforme3', 'size'),
+      description: GetInformation('Uniforme3', 'description'),
+      image: "images/images/uniforme_3.png",
+      //image: GetInformation('Uniforme3', 'image'),
       color: Color(0xFF989493)),
   Product(
       id: 4,
-      title: "Old Fashion",
-      price: 234,
-      size: 11,
-      description: dummyText,
-      image: "images/images/bag_4.png",
+      // id: GetInformation('Uniforme1', 'id'),
+      //title: Text("Belt gag"),
+      title: GetInformation('Uniforme4', 'title'),
+      price: GetInformation('Uniforme4', 'price'),
+      size: GetInformation('Uniforme4', 'size'),
+      description: GetInformation('Uniforme4', 'description'),
+      image: "images/images/uniforme_4.png",
+      //image: GetInformation('Uniforme4', 'image'),
       color: Color(0xFFE6B398)),
   Product(
       id: 5,
-      title: "Office Code",
-      price: 234,
-      size: 12,
-      description: dummyText,
-      image: "images/images/bag_5.png",
+      // id: GetInformation('Uniforme1', 'id'),
+      //title: Text("Belt gag"),
+      title: GetInformation('Uniforme5', 'title'),
+      price: GetInformation('Uniforme5', 'price'),
+      size: GetInformation('Uniforme5', 'size'),
+      description: GetInformation('Uniforme5', 'description'),
+      image: "images/images/uniforme_5.png",
+      //image: GetInformation('Uniforme5', 'image'),
       color: Color(0xFFFB7883)),
   Product(
     id: 6,
-    title: "Office Code",
-    price: 234,
-    size: 12,
-    description: dummyText,
-    image: "images/images/bag_6.png",
+    // id: GetInformation('Uniforme1', 'id'),
+    //title: Text("Belt gag"),
+    title: GetInformation('Uniforme6', 'title'),
+    price: GetInformation('Uniforme6', 'price'),
+    size: GetInformation('Uniforme6', 'size'),
+    description: GetInformation('Uniforme6', 'description'),
+    image: "images/images/uniforme_6.png",
+    //image: GetInformation('Uniforme6', 'image'),
     color: Color(0xFFAEAEAE),
   ),
 ];

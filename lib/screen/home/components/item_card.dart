@@ -33,21 +33,24 @@ class ItemCard extends StatelessWidget {
               child: Hero(
                 tag: "${product.id}",
                 child: Image.asset(product.image),
+                //child: product.image,
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
-            child: Text(
-              // products is out demo list
-              product.title,
-              style: TextStyle(color: kTextLightColor),
-            ),
+            child: product.title,
+            // child: Text(
+            //   // products is out demo list
+            //   product.title,
+            //   style: TextStyle(color: kTextLightColor),
+            // ),
           ),
-          Text(
-            "\$${product.price}",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          )
+          product.price,
+          // Text(
+          //   "\$${product.price}",
+          //   style: TextStyle(fontWeight: FontWeight.bold),
+          // )
         ],
       ),
     );

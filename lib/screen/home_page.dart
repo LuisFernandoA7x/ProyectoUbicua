@@ -7,9 +7,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:proyecto_ubicua/screen/home/components/body.dart';
 
-FirebaseFirestore _firestore = FirebaseFirestore.instance;
-CollectionReference uniformes;
-
 // //CON ESTO SE PUEDE CAMBIAR DE PAGINA
 // void homePress(BuildContext context) {
 //   Navigator.of(context).push(
@@ -42,35 +39,6 @@ class HomePage extends StatelessWidget {
       //     ),
       //   ],
       // ),
-    );
-  }
-}
-
-class GetInformation extends StatelessWidget {
-  final String documentId;
-  final String tipoDato;
-
-  GetInformation(this.documentId, this.tipoDato);
-
-  @override
-  Widget build(BuildContext context) {
-    CollectionReference db = FirebaseFirestore.instance.collection('uniformes');
-
-    return FutureBuilder<DocumentSnapshot>(
-      future: db.doc(documentId).get(),
-      builder:
-          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-        if (snapshot.hasError) {
-          return Text("Something went wrong");
-        }
-
-        if (snapshot.connectionState == ConnectionState.done) {
-          Map<String, dynamic> data = snapshot.data.data();
-          return Text("${data[tipoDato]}");
-        }
-
-        return Text("loading");
-      },
     );
   }
 }
