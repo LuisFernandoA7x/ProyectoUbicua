@@ -19,7 +19,7 @@ class ProductTitleWithImage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            "Prueba",
+            "Uniformes Vel Vel",
             style: TextStyle(color: Colors.white),
           ),
           product.title,
@@ -37,15 +37,19 @@ class ProductTitleWithImage extends StatelessWidget {
                 text: TextSpan(
                   children: [
                     TextSpan(text: "Precio\n"),
-                    TextSpan(
-                      text: "\$                          ",
-                      style: Theme.of(context).textTheme.headline4.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
+                    // TextSpan(
+                    //   //text: "\$${product.price}",
+                    //   text: "\$",
+                    //   style: Theme.of(context).textTheme.headline4.copyWith(
+                    //       color: Colors.white, fontWeight: FontWeight.bold),
+                    // ),
                   ],
                 ),
               ),
               product.price,
+              SizedBox(
+                width: 110,
+              ),
               SizedBox(width: kDefaultPaddin),
               Expanded(
                 child: Hero(

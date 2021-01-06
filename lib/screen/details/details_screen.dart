@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/models/Product.dart';
 import 'package:proyecto_ubicua/screen/details/components/body.dart';
+import 'package:proyecto_ubicua/Functions.dart';
 
 class DetailsScreen extends StatelessWidget {
   final int index;
@@ -14,6 +15,8 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       // each product have a color
       backgroundColor: products[index].color,
+      appBar: appBarBuscador(context),
+      drawer: drawerApp(context),
       //appBar: buildAppBar(context),
       body: Body(product: products[index]),
     );

@@ -28,13 +28,11 @@ class AddToCart extends StatelessWidget {
                 color: product.color,
               ),
             ),
-            // child: IconButton(
-            //   icon: SvgPicture.asset(
-            //     "assets/icons/add_to_cart.svg",
-            //     color: product.color,
-            //   ),
-            //   onPressed: () {},
-            // ),
+            child: IconButton(
+              icon: Icon(Icons.favorite),
+              color: product.color,
+              onPressed: () {},
+            ),
           ),
           Expanded(
             child: SizedBox(

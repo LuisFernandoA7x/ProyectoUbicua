@@ -2,94 +2,96 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_ubicua/Functions.dart';
 
 class Product {
-  final Widget title, description;
-  final String image;
-  final int id;
-  final Widget price, size;
-  final Color color;
+  Widget title, descriptionHeigth, titleItem, priceItemCard;
+  String image;
+  int id;
+  Widget price, size;
+  Color color;
   Product({
     this.id,
     this.image,
     this.title,
+    this.titleItem,
     this.price,
-    this.description,
+    this.priceItemCard,
+    //this.description,
+    this.descriptionHeigth,
     this.size,
     this.color,
   });
 }
 
-//Widget title = GetInformation('Uniforme1', 'title');
-
 List<Product> products = [
   Product(
       id: 1,
-      //id: GetInformation('Uniforme1', 'id'),
-      //title: "uniforme",
-      title: GetInformation('Uniforme1', 'title'),
-      price: GetInformation('Uniforme1', 'price'),
-      size: GetInformation('Uniforme1', 'size'),
-      description: GetInformation('Uniforme1', 'description'),
+      title: GetInformation('Uniforme1', 'title', 'title'),
+      titleItem: GetInformation('Uniforme1', 'title', 'titleItem'),
+      price: GetInformation('Uniforme1', 'price', 'price'),
+      priceItemCard: GetInformation('Uniforme1', 'price', 'priceItemCard'),
+      //description: GetInformation('Uniforme1', 'description'),
+      size: GetInformation('Uniforme1', 'size', 'size'),
+      descriptionHeigth:
+          GetInformation('Uniforme1', 'description', 'descriptionHeigth'),
       image: "images/images/uniforme_1.png",
-      //image: GetInformation('Uniforme1', 'image'),
-      color: Color(0xFF3D82AE)),
+      color: Color(0xFF245bb4)),
   Product(
       id: 2,
-      //id: GetInformation('Uniforme1', 'id'),
-      //title: "Belt Bag",
-      // title: Text("Belt gag"),
-      title: GetInformation('Uniforme2', 'title'),
-      price: GetInformation('Uniforme2', 'price'),
-      size: GetInformation('Uniforme2', 'size'),
-      description: GetInformation('Uniforme2', 'description'),
+      title: GetInformation('Uniforme2', 'title', 'title'),
+      titleItem: GetInformation('Uniforme2', 'title', 'titleItem'),
+      price: GetInformation('Uniforme2', 'price', 'price'),
+      priceItemCard: GetInformation('Uniforme2', 'price', 'priceItemCard'),
+      //description: GetInformation('Uniforme1', 'description'),
+      size: GetInformation('Uniforme2', 'size', 'size'),
+      descriptionHeigth:
+          GetInformation('Uniforme2', 'description', 'descriptionHeigth'),
       image: "images/images/uniforme_2.png",
-      //image: GetInformation('Uniforme2', 'image'),
-      color: Color(0xFFD3A984)),
+      color: Color(0xFF266de2)),
   Product(
       id: 3,
-      // id: GetInformation('Uniforme1', 'id'),
-      //title: Text("Belt gag"),
-      title: GetInformation('Uniforme3', 'title'),
-      price: GetInformation('Uniforme3', 'price'),
-      size: GetInformation('Uniforme3', 'size'),
-      description: GetInformation('Uniforme3', 'description'),
+      title: GetInformation('Uniforme3', 'title', 'title'),
+      titleItem: GetInformation('Uniforme3', 'title', 'titleItem'),
+      price: GetInformation('Uniforme3', 'price', 'price'),
+      priceItemCard: GetInformation('Uniforme3', 'price', 'priceItemCard'),
+      //description: GetInformation('Uniforme1', 'description'),
+      size: GetInformation('Uniforme3', 'size', 'size'),
+      descriptionHeigth:
+          GetInformation('Uniforme3', 'description', 'descriptionHeigth'),
       image: "images/images/uniforme_3.png",
-      //image: GetInformation('Uniforme3', 'image'),
-      color: Color(0xFF989493)),
+      color: Color(0xFF2060c8)),
   Product(
       id: 4,
-      // id: GetInformation('Uniforme1', 'id'),
-      //title: Text("Belt gag"),
-      title: GetInformation('Uniforme4', 'title'),
-      price: GetInformation('Uniforme4', 'price'),
-      size: GetInformation('Uniforme4', 'size'),
-      description: GetInformation('Uniforme4', 'description'),
+      title: GetInformation('Uniforme4', 'title', 'title'),
+      titleItem: GetInformation('Uniforme4', 'title', 'titleItem'),
+      price: GetInformation('Uniforme4', 'price', 'price'),
+      priceItemCard: GetInformation('Uniforme4', 'price', 'priceItemCard'),
+      //description: GetInformation('Uniforme1', 'description'),
+      size: GetInformation('Uniforme4', 'size', 'size'),
+      descriptionHeigth:
+          GetInformation('Uniforme4', 'description', 'descriptionHeigth'),
       image: "images/images/uniforme_4.png",
-      //image: GetInformation('Uniforme4', 'image'),
-      color: Color(0xFFE6B398)),
+      color: Color(0xFF1e56b0)),
   Product(
       id: 5,
-      // id: GetInformation('Uniforme1', 'id'),
-      //title: Text("Belt gag"),
-      title: GetInformation('Uniforme5', 'title'),
-      price: GetInformation('Uniforme5', 'price'),
-      size: GetInformation('Uniforme5', 'size'),
-      description: GetInformation('Uniforme5', 'description'),
+      title: GetInformation('Uniforme5', 'title', 'title'),
+      titleItem: GetInformation('Uniforme5', 'title', 'titleItem'),
+      price: GetInformation('Uniforme5', 'price', 'price'),
+      priceItemCard: GetInformation('Uniforme5', 'price', 'priceItemCard'),
+      //description: GetInformation('Uniforme1', 'description'),
+      size: GetInformation('Uniforme5', 'size', 'size'),
+      descriptionHeigth:
+          GetInformation('Uniforme5', 'description', 'descriptionHeigth'),
       image: "images/images/uniforme_5.png",
-      //image: GetInformation('Uniforme5', 'image'),
-      color: Color(0xFFFB7883)),
+      color: Color(0xFF1b4c9b)),
   Product(
-    id: 6,
-    // id: GetInformation('Uniforme1', 'id'),
-    //title: Text("Belt gag"),
-    title: GetInformation('Uniforme6', 'title'),
-    price: GetInformation('Uniforme6', 'price'),
-    size: GetInformation('Uniforme6', 'size'),
-    description: GetInformation('Uniforme6', 'description'),
-    image: "images/images/uniforme_6.png",
-    //image: GetInformation('Uniforme6', 'image'),
-    color: Color(0xFFAEAEAE),
-  ),
+      id: 6,
+      title: GetInformation('Uniforme6', 'title', 'title'),
+      titleItem: GetInformation('Uniforme6', 'title', 'titleItem'),
+      price: GetInformation('Uniforme6', 'price', 'price'),
+      priceItemCard: GetInformation('Uniforme6', 'price', 'priceItemCard'),
+      //description: GetInformation('Uniforme1', 'description'),
+      size: GetInformation('Uniforme6', 'size', 'size'),
+      descriptionHeigth:
+          GetInformation('Uniforme6', 'description', 'descriptionHeigth'),
+      image: "images/images/uniforme_6.png",
+      color: Color(0xFF174083)),
 ];
-
-String dummyText =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.";

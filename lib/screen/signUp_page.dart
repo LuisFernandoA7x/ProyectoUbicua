@@ -6,7 +6,6 @@ import 'package:proyecto_ubicua/constants.dart';
 import 'package:proyecto_ubicua/Functions.dart';
 
 String mensaje = "";
-void _registrarte(FirebaseAuth) {}
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key key}) : super(key: key);

@@ -7,11 +7,14 @@ import 'package:proyecto_ubicua/screen/login_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:proyecto_ubicua/models/Product.dart';
+import 'package:proyecto_ubicua/constants.dart';
 
 Color bg_App = Color(0xFF0E4382);
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 UserCredential user;
+Product prodFinal;
 
 Widget drawerApp(BuildContext context) {
   return Drawer(
@@ -177,9 +180,9 @@ Widget textFormPass(String lab, String hint) {
 
 class GetInformation extends StatelessWidget {
   final String documentId;
-  final String tipoDato;
+  final String tipoDato, llamado;
 
-  GetInformation(this.documentId, this.tipoDato);
+  GetInformation(this.documentId, this.tipoDato, this.llamado);
 
   @override
   Widget build(BuildContext context) {
@@ -197,9 +200,40 @@ class GetInformation extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           Map<String, dynamic> data = snapshot.data.data();
 
-          //return data[tipoDato];
+          switch (llamado) {
+            case 'price':
+              return Text("\n \$ ${data[tipoDato]}",
+                  style: Theme.of(context).textTheme.headline4.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold));
+              break;
+            case 'priceItemCard':
+              return Text("\$ ${data[tipoDato]}",
+                  style: TextStyle(fontWeight: FontWeight.bold));
+              break;
 
-          return Text("${data[tipoDato]}");
+            case 'title':
+              return Text("${data[tipoDato]}",
+                  style: Theme.of(context).textTheme.headline4.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold));
+              break;
+            case 'titleItem':
+              return Text("${data[tipoDato]}",
+                  style: TextStyle(color: kTextLightColor));
+              break;
+
+            case 'size':
+              return Text(
+                "${data[tipoDato]}",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline5
+                    .copyWith(fontWeight: FontWeight.bold),
+              );
+              break;
+            case 'descriptionHeigth':
+              return Text("${data[tipoDato]}", style: TextStyle(height: 1.5));
+              break;
+          }
         }
         return Text("loading");
       },
@@ -209,9 +243,10 @@ class GetInformation extends StatelessWidget {
 
 class GetInformation2 extends StatelessWidget {
   final String documentId2;
-  final String tipoDato2;
+  final String img;
+  final int idd;
 
-  GetInformation2(this.documentId2, this.tipoDato2);
+  GetInformation2(this.documentId2, this.idd, this.img);
 
   @override
   Widget build(BuildContext context) {
@@ -228,10 +263,18 @@ class GetInformation2 extends StatelessWidget {
 
         if (snapshot.connectionState == ConnectionState.done) {
           Map<String, dynamic> data = snapshot.data.data();
-
-          //return data[tipoDato];
-
-          return Text("${data[tipoDato2]}");
+          Product p = new Product();
+          // p.id = idd;
+          // p.color = Color(0xFF3D82AE);
+          // p.image = img;
+          // p.title = "${data['title']}";
+          // p.price = "${data['price']}";
+          // p.description = "${data['description']}";
+          // p.size = "${data['size']}";
+          // prodFinal = p;
+          //products.add(p);
+          //return Text("${data['title']}");
+          //return Text(products.length.toString());
         }
         return Text("loading");
       },
