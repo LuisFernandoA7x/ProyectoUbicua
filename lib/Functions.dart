@@ -207,11 +207,11 @@ class GetInformation extends StatelessWidget {
   }
 }
 
-class GetInformation2 extends StatelessWidget {
+class GetInformationPrecio extends StatelessWidget {
   final String documentId2;
   final String tipoDato2;
 
-  GetInformation2(this.documentId2, this.tipoDato2);
+  GetInformationPrecio(this.documentId2, this.tipoDato2);
 
   @override
   Widget build(BuildContext context) {
@@ -231,7 +231,86 @@ class GetInformation2 extends StatelessWidget {
 
           //return data[tipoDato];
 
-          return Text("${data[tipoDato2]}");
+          return Text(
+            "${data[tipoDato2]}",
+            style: Theme.of(context)
+                .textTheme
+                .headline5
+                .copyWith(fontWeight: FontWeight.bold),
+          );
+        }
+        return Text("loading");
+      },
+    );
+  }
+}
+
+class GetInformationDescrip extends StatelessWidget {
+  final String documentId2;
+  final String tipoDato2;
+
+  GetInformationDescrip(this.documentId2, this.tipoDato2);
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference db =
+        FirebaseFirestore.instance.collection('UniformesEscolares');
+
+    return FutureBuilder<DocumentSnapshot>(
+      future: db.doc(documentId2).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data = snapshot.data.data();
+
+          //return data[tipoDato];
+
+          return Text(
+            "${data[tipoDato2]}",
+            style: TextStyle(height: 1.5),
+          );
+        }
+        return Text("loading");
+      },
+    );
+  }
+}
+
+class GetInformationTam extends StatelessWidget {
+  final String documentId2;
+  final String tipoDato2;
+
+  GetInformationTam(this.documentId2, this.tipoDato2);
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference db =
+        FirebaseFirestore.instance.collection('UniformesEscolares');
+
+    return FutureBuilder<DocumentSnapshot>(
+      future: db.doc(documentId2).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data = snapshot.data.data();
+
+          //return data[tipoDato];
+
+          return Text(
+            "${data[tipoDato2]}",
+            style: Theme.of(context)
+                .textTheme
+                .headline5
+                .copyWith(fontWeight: FontWeight.bold),
+          );
         }
         return Text("loading");
       },
