@@ -245,7 +245,6 @@ class GetInformation2 extends StatelessWidget {
   final String documentId2;
   final String img;
   final int idd;
-
   GetInformation2(this.documentId2, this.idd, this.img);
 
   @override
@@ -275,6 +274,16 @@ class GetInformation2 extends StatelessWidget {
           //products.add(p);
           //return Text("${data['title']}");
           //return Text(products.length.toString());
+
+          //return data[tipoDato];
+
+          // return Text(
+          //   "${data[tipoDato2]}",
+          //   style: Theme.of(context)
+          //       .textTheme
+          //       .headline5
+          //       .copyWith(fontWeight: FontWeight.bold),
+          // );
         }
         return Text("loading");
       },
