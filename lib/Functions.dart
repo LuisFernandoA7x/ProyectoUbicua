@@ -9,12 +9,19 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:proyecto_ubicua/models/Product.dart';
 import 'package:proyecto_ubicua/constants.dart';
+import 'package:proyecto_ubicua/screen/home/components/new_Product_Page.dart';
 
 Color bg_App = Color(0xFF0E4382);
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 UserCredential user;
 Product prodFinal;
+
+void newProductPress(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute(builder: (_) => NewProduct()),
+  );
+}
 
 Widget drawerApp(BuildContext context) {
   return Drawer(
@@ -90,6 +97,11 @@ Widget drawerApp(BuildContext context) {
         Divider(
           color: Colors.grey,
           indent: 20,
+        ),
+        ListTile(
+          title: Text('Nuevo Producto'),
+          leading: Icon(Icons.add_circle_outline),
+          onTap: () => newProductPress(context),
         ),
         ListTile(
           title: Text('Ayuda'),
